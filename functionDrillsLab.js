@@ -81,7 +81,7 @@ function compareNums(num1, num2){
   if(num1 >= num2)return num1
   else return num2
 };
-compareNums(2,5)
+console.log(compareNums(2,5))
 
 ////////////////// PROBLEM 6 ////////////////////
 /*
@@ -98,6 +98,7 @@ function add(one, two){
 }
 
 let sum = add(2, '5')
+console.log(sum)
 
 ////////////////// PROBLEM 7 ////////////////////
 
@@ -188,6 +189,13 @@ console.log(nameGreeting)
 
 //CODE HERE
 
+function faveColorFinder(color){
+  if(color === 'red') return 'red is a great color'
+  if(color === 'green') return 'green is a solid favorite color'
+  if(color === 'black') return 'so trendy'
+  return 'you need to evaluate your favorite color choice' 
+}
+let colorRating = faveColorFinder('green')
 
 ////////////////// PROBLEM 12 ////////////////////
 let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
@@ -199,6 +207,13 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 
 //CODE HERE
 
+function printAllNames(arr){
+  for(let i=0; i<arr.length; i++){
+    console.log(arr[i])
+  }
+};
+
+printAllNames(namesArr)
 
 ////////////////// PROBLEM 13 ////////////////////
 /*
@@ -209,7 +224,12 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 */
 
 //CODE HERE
-
+function thatsOdd(num){
+  if(num%2 === 0) return "That's not odd!"
+  return 'That is odd indeed!'
+};
+let oddChecker = thatsOdd(7)
+console.log(oddChecker)
 
 ////////////////// PROBLEM 14 ////////////////////
 
@@ -223,6 +243,8 @@ let namesArr = ['Cameron', 'Riley', 'Eric', 'Brenna', 'Karl']
 
 //CODE HERE
 
+let bestMovie = (title) => `${title} is the best movie ever!`
+console.log(bestMovie('StarWars'))
 
 ////////////////// PROBLEM 15 ////////////////////
 let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
@@ -237,6 +259,17 @@ let bigOrSmallArray = [1,101, 102, 2, 103, 4, 5, 6, 107]
 
 //CODE HERE
 
+let bigOrSmall = (arr) => {
+  let answers = []
+  for(let i=0; i<arr.length; i++){
+    if(arr[i] > 100) answers.push('big')
+    else answers.push('small')
+  }
+  return answers
+}
+
+let arrayEvaluator = bigOrSmall(bigOrSmallArray)
+console.log(arrayEvaluator)
 
 ////////////////// PROBLEM 16 ////////////////////
 let contestants = ['Katniss', 'Peeta', 'Fox-face', 'Glimmer', 'Cato', 'Rue', 'Thresh', 'Clove', 'Marvel']
@@ -248,6 +281,15 @@ let loser = 'Glimmer'
 
 //CODE HERE
 
+function theEliminator(arr, str){
+  let i = arr.indexOf(str)
+  arr.splice(i, 1)
+
+  return arr
+};
+
+console.log(theEliminator(contestants, loser))
+
 
 ////////////////// PROBLEM 17 ////////////////////
 let sampleString = "Hi, my name is Kylo."
@@ -258,6 +300,10 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+function func(str){
+  console.log(str.toUpperCase())
+};
+func('ben')
 
 ////////////////// PROBLEM 18 ////////////////////
 /*
@@ -270,6 +316,14 @@ let sampleString = "Hi, my name is Kylo."
   return 'must provide a valid email address'
 */
 
+function emailCheck(email){
+  if(email.includes('@')){
+    return 'email verified'
+  }
+  return 'must provide a valid email address'
+};
+console.log(emailCheck('ben@mail.com  '))
+
 ////////////////// PROBLEM 19 ////////////////////
 /*
   Write a function, naming it whatever you believe to be appropriate, that buys as many chocolate frogs as possible with a certain amount of gold. Each chocolate frog costs 3 gold. Your function should take in a single parameter, which is the amount of gold you are willing to spend. Your function should return a total amount of chocolate frogs you were able to purchase.
@@ -278,6 +332,13 @@ let sampleString = "Hi, my name is Kylo."
 
 //CODE HERE
 
+function chocoFrogs(dollars){
+  let price = 3
+  return Math.floor(dollars / price)
+};
+let totalFrogs = chocoFrogs(20)
+
+console.log(totalFrogs)
 
 ////////////////// PROBLEM 20 ////////////////////
 /*
@@ -285,6 +346,7 @@ let sampleString = "Hi, my name is Kylo."
 */
 
 //CODE HERE
+
 
 
 ////////////////// PROBLEM 21 ////////////////////
@@ -295,6 +357,15 @@ let sampleArray = [0,1,2,3,4,7,5,6,8,9]
 
 //CODE HERE
 
+function random(arr){
+  let arrayIsAscending = true
+  for(let i=1; i<=arr.length; i++){
+    if(arr[i] < arr[i - 1]) arrayIsAscending = false
+  }
+  return arrayIsAscending
+};
+
+console.log(random(sampleArray))
 
 ////////////////// PROBLEM 22 ////////////////////
 
@@ -305,11 +376,11 @@ function bathroom() {
   function bathtub() {
     let sailorDuck = "nautical";
   }
-}
+};
 
 function pond() {
   let realDuck = "fluffy";
-}
+};
 
 /*
   There are 4 variables above: duck, rubberDuck, sailorDuck and realDuck.
@@ -318,13 +389,13 @@ function pond() {
 */
 
 //This array should contain the variable names (as strings) accessible in the global scope.
-let globalScope = []
+let globalScope = ['cute']
 
 //This array should contain the variable names (as strings) accessible in the bathroom function.
-let bathroomScope = []
+let bathroomScope = ['rubberDuck', 'cute']
 
 //This array should contain the variable names (as strings) accessible in the bathtub function.
-let bathtubScope = []
+let bathtubScope = ['sailorDuck', 'rubberDuck', 'cute']
 
 //This array should contain the variable names (as strings) accessible in the pond function.
-let pondScope = []
+let pondScope = ['fluffy', cute]
